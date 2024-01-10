@@ -1,0 +1,569 @@
+:root{
+    --azul: #0013a1;
+    --blanco: #fff;
+    --celeste: #0059ff;
+    --celeste2: #1e7bd2;
+    --gris: rgb(182, 182, 182);
+    --oscuro: #000;
+    --titulos: 'Inter Tight', cursive;
+    --parrafos: 'Lato', sans-serif;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body{
+    font-size: 1.6rem;
+    overflow-x: hidden;
+    padding-bottom: 3rem;
+}
+
+*,*::after, *::before{
+    box-sizing: inherit;
+}
+/* globales */
+
+
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}   
+h1, h2{
+    font-family: var(--titulos);
+}
+h3, p, a{
+    font-family: var(--parrafos);
+}
+
+img{
+    max-width: 100%;
+}
+.name{
+    padding-left: 1rem;
+}
+.logowebp{
+    border-radius: 5px;
+    height: 55px; 
+    width: 55px;
+    box-shadow: 3px 4px 4px rgb(65, 64, 64);
+}
+@media(min-width:768px){
+    .name{
+        padding-left: 3rem;
+    }
+    .logowebp{
+        height: 75px; 
+        width: 75px;
+    }
+}
+.gris{
+    color: var(--gris);
+}
+.ocultar{
+    display: none;
+}
+.btn-cerrar{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--blanco);
+    position: absolute;
+    transition: color .3s ease-in-out;
+    top: 1rem;
+    right: 5rem;
+    user-select: none;
+}
+.pantalla-completa{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    bottom: 0%;
+    right: 0%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 4;
+}
+
+@keyframes desplazamiento{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0%);
+    }
+}
+
+.btn-cerrar:hover{
+    color: var(--azul);
+    cursor: pointer;
+}
+.btn{
+    text-decoration: none;
+    color: var(--blanco);
+    font-size: 1.8rem;
+    text-transform: capitalize;
+    padding: 1rem 3rem;
+    border-radius: 5px;
+    transition: all .3s ease-in-out;
+    box-shadow: 3px 5px 5px rgb(53, 49, 49);
+}
+@media(min-width:768px){
+    .btn{
+        font-size: 2.2rem;
+    }
+    
+
+}
+.bordes{
+    border: 2.8px solid var(--blanco);
+}
+@media(min-width:768px){
+    .bordes{
+        border: 4px solid var(--blanco);
+    }
+}
+.bordes:hover{
+    color: var(--celeste);
+    background-color: var(--blanco);
+}
+.btn-celeste{
+    background-color: var(--celeste);
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 2rem;
+}
+.btn-celeste2{
+    background-color: var(--celeste2);
+    border: none;
+    display: inline-block;
+    margin-bottom: 2rem;
+    font-family: var(--parrafos);
+}
+.btn-celeste2:hover{
+    background-color: var(--celeste);
+    cursor: pointer;
+}
+.contenedor-navegacion{
+    background-color: var(--oscuro);
+    position: relative;
+    z-index: 5;
+}
+/* Encabezado */
+
+.contenido-navegacion{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.logo h2, .navegacion a{
+    color: var(--blanco);
+    line-height: 6rem;
+    font-weight: bold;
+}
+/* .logo h2{
+    font-size: 3rem;
+} */
+.navegacion a{
+    display: block;
+    text-decoration: none;
+    font-size: 2.2rem;
+    padding: 1.3rem;
+    padding-left: 4rem;
+    transition: color .3s ease-in-out;
+    text-align: center;
+}
+@media(min-width:768px){
+    .navegacion a{
+        text-align: left;
+    }
+}
+.navegacion a:hover{
+    color: var(--celeste);
+}
+.navegacion a:first-of-type{
+    margin-top: 3rem;
+}
+.navegacion{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 40rem;
+    padding: 3rem 4rem  ;
+    background-color: var(--oscuro);
+    animation: desplazamiento .5s ease-in-out;
+}
+.hamburguesa:hover{
+    cursor: pointer;
+}
+.hamburguesa span{
+    background-color: var(--blanco);
+    display: block;
+    width: 5rem;
+    height: .5rem;
+    margin-bottom: .5rem;
+}
+/* video */
+.contenido-header{
+    position: relative;
+    
+}
+.contenido-header::before{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.5);
+}
+.texto-encabezado{
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.texto-encabezado h2{
+    color: var(--blanco);
+    font-size: 3rem;
+}
+@media(min-width:768px){
+    .texto-encabezado h2{
+        font-size: 8rem;
+        }
+}
+video{
+    width: 100%;
+    height: 100%;
+    /*padding-right:  8rem;
+    padding-left: 8rem;*/
+}
+/* sobre nosotros */
+.contenedor-nosotros{
+    padding-top: 3rem;
+
+}
+@media(min-width:768px){
+    .contenedor-nosotros{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.texto-nosotros, .imagenes-nosotros{
+    flex: 0 0 calc(50% - 1rem);
+}
+.texto-nosotros .bienvenida{
+    font-size: 2rem;
+    color: var(--celeste);
+    text-align: center;
+}
+@media(min-width:768px){
+    .texto-nosotros .bienvenida{
+        font-size: 4rem;
+        text-align: left;
+    }
+
+}
+.texto-nosotros h1{
+    font-size: 3rem;
+    text-align: center;
+}
+@media(min-width:768px){
+    .texto-nosotros h1{
+        font-size: 4rem;
+        text-align: left;
+    }
+}
+.texto-nosotros p{
+    font-size: 1.5rem;
+    text-align: center;
+}
+@media(min-width:768px){
+    .texto-nosotros p{
+        font-size: 2.5rem;
+        text-align: left;
+    }
+}
+.imagenes-nosotros{
+    display: flex;
+    justify-content: space-between;
+}
+.imagenes-nosotros img{
+    border-radius: 5px;
+}
+.imagen1, .imagenes2{
+    flex: 0 0 calc(50% - 1rem);
+}
+.imagenes2 img{
+    margin-bottom: 1rem;
+}
+.listado{
+    padding-top: 4rem;
+}
+/* Servicios */
+/* .servicio{
+    height: 100rem;
+} */
+
+.texto-servicios{
+    text-align: center;
+    font-size: 5rem;
+}
+
+.botones-servicios{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.botones-servicios button{
+    flex: 0 0 (50% - 1rem);
+    padding: 1rem 1rem;
+}
+@media(min-width:768px){
+    .botones-servicios{
+        display: inline-block;
+    }
+    .botones-servicios button{
+        flex: unset;
+        padding: .8rem .8rem;
+    }
+}
+@media(min-width:768px){
+    .servicios{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.servicio{
+    flex: 0 0 calc(50% - 1rem);
+    border: 1.5px solid #e1e1e1;
+    padding: 3rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+.servicio img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+.servicio h2{
+    text-align: center;
+}
+.servicio ul{
+    font-size: 1.8rem;
+}
+.precio{
+    display: flex;
+    justify-content: space-between;
+}
+.precio p{
+    font-size: 2rem;
+    font-weight: bold;
+}
+.whatsapp svg{
+    width: 7rem;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    filter: drop-shadow(.8rem .8rem .8rem #0008);
+    transition: all .3s ease-in-out;
+    z-index: 5;
+}
+.whatsapp svg:hover{
+    width: 10rem;
+}
+.separador{
+    background-image: url('../assents/img/3.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 2;
+}
+.separador::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.5);
+    z-index: -1;
+}
+.contenidoSeparador{
+    padding: 2rem;
+    text-align: center;
+}
+.contenidoSeparador h2{
+    font-size: 4rem;
+    color: var(--celeste);
+}
+.contenidoSeparador p{
+    color: var(--blanco);
+    font-size: 2rem;
+}
+@media(min-width:768px){
+    .contenidoSeparador{
+        padding: 5rem;
+        text-align: justify;
+    }
+    .contenidoSeparador h2{
+        font-size: 5rem;
+    }
+    .contenidoSeparador p{
+        font-size: 3rem;
+    }
+}
+/* seccion vision y mision */
+.visionMision h2{
+    font-size: 4rem;
+    color: var(--celeste);
+    text-align: center;
+}
+.visionesMisiones{
+    display: block;
+    text-align: center;
+}
+@media(min-width:768px){
+    .visionesMisiones{
+        display: flex;
+        justify-content: space-between;
+        text-align: justify;
+    }
+}
+.visionesMisiones h3{
+    font-size: 2.5rem;
+}
+.visionesMisiones p{
+    font-size: 1.5rem;
+}
+@media(min-width:768px){
+    .visionesMisiones h3{
+        font-size: 3.5rem;
+    }
+    .visionesMisiones p{
+        font-size: 2rem;
+    }
+}
+.visionesMisiones, .vision, .mision{
+    flex: 0 0 calc(50% - 1rem);
+
+}
+.ubicacion{
+    font-size: 1.5rem;
+    color: var(--blanco);
+    text-decoration: none;
+    transition: all .3s ease-in-out;
+}
+@media(min-width:768px){
+    .ubicacion{
+        font-size: 2rem;
+    }
+}
+.ubicacion:hover{
+    cursor: pointer;
+    font-size: 3rem;
+}
+
+
+/* formulario contacto */
+
+.formularioContacto{
+    padding-top: 5rem;
+}
+
+@media(min-width:768px){
+    .formularioContacto{
+        display: flex;
+    }
+}
+
+.infoContacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.infoContacto, .formulario{
+    flex: 0 0 calc(50% - 1rem);
+}
+.infoContacto{
+    background-color: var(--oscuro);
+    padding: 2rem;
+}
+/* @media(min-width:768px){
+    .infoContacto{
+        height: 55rem;
+}
+} */
+
+.infoContacto h3, .infoContacto p, .redesSociales i{
+    color: var(--blanco);
+}
+.infoContacto h3{
+    font-size: 3rem;
+    font-family: var(--titulos);
+}
+.infoContacto p, .infoContacto a{
+    font-size: 2rem;
+}
+.infoContacto i{
+    margin-right: 1rem;
+}
+.redesSociales{
+    font-size: 2rem;
+    
+}
+
+.face:hover{
+    cursor: pointer;
+    font-size: 5rem; 
+}
+
+.formulario{
+    padding: 5rem;
+}
+
+.input-Formulario label{
+display: block;
+font-size: 2rem;
+font-family: var(--parrafos);
+margin-bottom: 1.5rem;
+}
+.input-Formulario input, .input-Formulario textarea{
+    width: 150%;
+}
+.input-Formulario input, .input-Formulario textarea{
+    padding: 1rem 1.5rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 5px;
+    outline: none;
+    font-family: var(--parrafos);
+}
+.input-Formulario textarea{
+    height: 15rem;
+}
+/* .ident{text-indent: 10px;} */
+
+.imagenes-nosotros{
+    padding-top: 2rem;
+}
+
+.servicios{
+    font-family: var(--parrafos);
+}
